@@ -9,8 +9,12 @@ import TetrisGame from './components/TetrisGame';
 import BreakoutGame from './components/BreakoutGame';
 import FlappyBirdGame from './components/FlappyBirdGame';
 import SudokuGame from './components/SudokuGame';
+import PacManGame from './components/PacManGame';
+import SpaceInvadersGame from './components/SpaceInvadersGame';
+import PongGame from './components/PongGame';
+import MinesweeperGame from './components/MinesweeperGame';
 
-type GameType = 'home' | 'snake' | '2048' | 'tictactoe' | 'memory' | 'tetris' | 'breakout' | 'flappybird' | 'sudoku';
+type GameType = 'home' | 'snake' | '2048' | 'tictactoe' | 'memory' | 'tetris' | 'breakout' | 'flappybird' | 'sudoku' | 'pacman' | 'spaceinvaders' | 'pong' | 'minesweeper';
 
 function App() {
   const [currentGame, setCurrentGame] = useState<GameType>('home');
@@ -33,6 +37,14 @@ function App() {
         return <FlappyBirdGame />;
       case 'sudoku':
         return <SudokuGame />;
+      case 'pacman':
+        return <PacManGame />;
+      case 'spaceinvaders':
+        return <SpaceInvadersGame />;
+      case 'pong':
+        return <PongGame />;
+      case 'minesweeper':
+        return <MinesweeperGame />;
       default:
         return <GameGrid onGameSelect={setCurrentGame} />;
     }
